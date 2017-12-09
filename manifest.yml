@@ -1,0 +1,30 @@
+applications:
+- name: demo-consumer
+  url: []
+  memory: 32M
+  instances: 1
+  services:
+    demo-mq: rabbitmq3
+  timeout: 30
+  stackato:
+    description: Consumer
+    autoscale:
+      enabled: true
+      instances:
+        min: 1
+        max: 8
+      cpu:
+        min: 15
+        max: 30
+    env:
+      queueName:
+        default: demo-queue
+    ignores:
+      - .git
+      - .gitignore
+      - bin
+      - demo-consumer
+      - demo-consumer.exe
+      - consume-all.go
+      - consume-all
+      - consume-all.exe

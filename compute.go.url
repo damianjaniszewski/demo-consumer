@@ -1,0 +1,24 @@
+package main
+
+import (
+    "io"
+    "log"
+    "net/http"
+    "os"
+    "strconv"
+)
+
+
+func Compute(num int64) int64 {
+  response, err := http.Get(os.Getenv("computeURL")+strconv.FormatInt(num, 10))
+  if err != nil {
+          log.Fatal(err)
+  } else {
+          defer response.Body.Close()
+          _, err := io.Copy(os.Stdout, response.Body)
+          if err != nil {
+                  log.Fatal(err)
+          }
+  }
+  return 0
+}
