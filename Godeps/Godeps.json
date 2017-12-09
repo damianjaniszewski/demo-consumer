@@ -1,0 +1,11 @@
+{
+	"ImportPath": "Microservices/demo-consumer",
+	"GoVersion": "go1.9",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/streadway/amqp",
+			"Rev": "dfe15e36048539f4cda41f240b27a5ca25b9cd46"
+		}
+	]
+}
