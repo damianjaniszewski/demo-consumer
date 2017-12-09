@@ -1,4 +1,4 @@
-# demo-producer
+# demo-consumer
 
 This is a demo-consumer application.
 
